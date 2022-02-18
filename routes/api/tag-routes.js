@@ -1,28 +1,71 @@
 const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
-// The `/api/tags` endpoint
+// THE `/API/TAGS` ENDPOINT
 
+// FIND ALL TAGS
 router.get('/', (req, res) => {
-  // find all tags
-  // be sure to include its associated Product data
+  Tag.findAll({
+    // INCLUDE ASSOCIATED PRODUCT DATA
+    include: [
+      {
+        model: Product
+      },
+    ]
+  })
+  .then(dbTagData => res.json(dbTagData))
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
+// FIND A SINGLE TAG BY ITS `ID`
 router.get('/:id', (req, res) => {
-  // find a single tag by its `id`
-  // be sure to include its associated Product data
+  // BE SURE TO INCLUDE ITS ASSOCIATED PRODUCT DATA
+  Tag.findOne({
+    // MATCH BY INPUTTED ID
+    where: {
+      id: req.params.id,
+    },
+    // INCLUDE ASSOCIATED PRODUCT DATA
+    include: [
+      {
+        model: Product
+      }
+    ]
+  })
+  .then(dbTagData => {
+    if (!dbTagData) {
+      res.status(404).json({ message: 'No product found with this id' });
+      return;
+    }
+    res.json(dbTagData);
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
 router.post('/', (req, res) => {
-  // create a new tag
+  // CREATE A NEW TAG
+  Tag.create({
+    tag_name: req.body.tag_name
+  })
+  .then(dbTagData => res.json(dbTagData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.put('/:id', (req, res) => {
-  // update a tag's name by its `id` value
+  // UPDATE A TAG'S NAME BY ITS `ID` VALUE
 });
 
 router.delete('/:id', (req, res) => {
-  // delete on tag by its `id` value
+  // DELETE ON TAG BY ITS `ID` VALUE
 });
 
 module.exports = router;
