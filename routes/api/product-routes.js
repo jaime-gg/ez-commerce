@@ -126,8 +126,22 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// DELETE ONE PRODUCT BY ITS `ID` VALUE
 router.delete('/:id', (req, res) => {
-  // DELETE ONE PRODUCT BY ITS `ID` VALUE
+  Product.destroy({
+    where: {id: req.params.is}
+  })
+  .then(dbProductData => {
+    if(!dbProductData) {
+      res.status(404).json({message: 'No product found with this id'});
+      return;
+    }
+    res.json(dbProductData)
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 module.exports = router;
