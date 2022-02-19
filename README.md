@@ -1,5 +1,5 @@
 # EZ-COMMERCE: An E-commerce Back End
-I was tasked with developing the back end of am e-commerce site, which are known for specializing in internet retail. This assignment pushed to to utilize the skills I have learned to hone over the past few assignments by taking a working Express.js API and configure it to use Sequelize to interact with a MySQL database.
+I was tasked with developing the back end of am e-commerce site, which are known for specializing in internet retail. This assignment pushed me to utilize the skills I have learned to hone over the past few assignments by taking a working Express.js API and configure it to use Sequelize to interact with a MySQL database.
 
 By following the instructions I was able to efficiently go though the provided files and append the necessary code for a functional back-end. First it was by successfully initiating a database in conjunction with both the provided SCHEMA.SQL and the connection file that was supported by an .ENV file. Then I went through the models and added the desired columns, followed by developing the needed associations, and was finished when I developed functional api routes that created, pulled, updated, and deleted data.  
 
