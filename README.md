@@ -38,6 +38,6 @@ Use the `schema.sql` file in the `db` folder to create your database using MySQL
 
 You are required to submit BOTH of the following for review:
 
-* Walkthrough Video Link: 
+* Walkthrough Video Link: https://drive.google.com/file/d/1IEvlXY_5WGAdmwBazQUYX6WgNqEY-QPO/view 
 
-* GitHub Repo: 
+* GitHub Repo: https://github.com/jaime-gg/ez-commerce 
