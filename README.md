@@ -1,7 +1,7 @@
 # EZ-COMMERCE: An E-commerce Back End
 I was tasked with developing the back end of am e-commerce site, which are known for specializing in internet retail. This assignment pushed to to utilize the skills I have learned to hone over the past few assignments by taking a working Express.js API and configure it to use Sequelize to interact with a MySQL database.
 
-By following the instructions I was able to efficiently go though the provided files and append the necessary code for a functional back-end. First it was by successfully initiating a database in conjunction with both the provided SCHEMA.SQL and the connection file that was supported with a .ENV file. Then I went through the models and added the desired columns, followed by developing the needed associations, and was finished when I developed functional api routes that created, pulled, updated, and deleted data.  
+By following the instructions I was able to efficiently go though the provided files and append the necessary code for a functional back-end. First it was by successfully initiating a database in conjunction with both the provided SCHEMA.SQL and the connection file that was supported by an .ENV file. Then I went through the models and added the desired columns, followed by developing the needed associations, and was finished when I developed functional api routes that created, pulled, updated, and deleted data.  
 
 ## Given: User Story
 
@@ -32,7 +32,7 @@ As part of this assignment I had to include a [WALKTHROUGH](https://drive.google
 
 ## Usage
 
-After cloning this repo, start off by using the command line to 'npm i' since you’ll need to use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect the Express.js API to a MySQL database and the [dotenv package](https://www.npmjs.com/package/dotenv) to use environment variables to store sensitive data, like your MySQL username, password, and database name. An example of the formatting of this .ENV file will be included in with this repo. 
+After cloning this repo, start off by using the command line to 'npm i', since you’ll need to use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect the Express.js API to a MySQL database, and the [dotenv package](https://www.npmjs.com/package/dotenv) to use environment variables to store sensitive data, like your MySQL username, password, and database name. An example of the formatting of this .ENV file will be included in with this repo. 
 
 Use the `schema.sql` file in the `db` folder to create your database using MySQL shell commands. I modified the provided file so that it will automatically begin using the database whenever this file is run using 'SOURCE db/schema.sql'. Finally, you must use environment variables to store sensitive data, like your MySQL username, password, and database name.
 
